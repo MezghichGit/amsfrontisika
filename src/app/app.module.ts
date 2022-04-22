@@ -8,6 +8,8 @@ import { AddProviderComponent } from './add-provider/add-provider.component';
 import { ListProviderComponent } from './list-provider/list-provider.component';
 import { UpdateProviderComponent } from './update-provider/update-provider.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     AddProviderComponent,
     ListProviderComponent,
     UpdateProviderComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+tr:nth-child(even) {
+ background-color: #f2f2f2;
+}
+body{
+ padding:1%
+}

@@ -17,10 +17,23 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private loginservice: AuthenticationService) { }
 
   checkLogin() {
-    if (this.loginservice.authenticate(this.username, this.password)==true) {
+ console.log(this.username+" "+ this.password)
+    this.loginservice.authenticate(this.username, this.password).subscribe(
+      data => {
+        this.router.navigate([''])
+        this.invalidLogin = false
+      },
+      error => {
+        this.invalidLogin = true
+
+      }
+    )
+    ;
+
+    /*if (this.loginservice.authenticate(this.username, this.password)==true) {
       this.router.navigate([''])
     } else
-      this.invalidLogin = true
+      this.invalidLogin = true*/
   }
 
 

@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProviderService {
 
-  urlProviders = 'http://127.0.0.1:8383/providers';
+  urlProviders = 'http://127.0.0.1:8383/ams/providers';
   provider: any;
 
   constructor(private Http: HttpClient) { }
@@ -13,7 +13,7 @@ export class ProviderService {
   listProviders() {
     return this.Http.get(this.urlProviders + '/list');
   }
-  createProvider(myform:any) {
+  createProvider(myform: any) {
     this.provider = {
       'name': myform.value.providerName,
       'email': myform.value.providerEmail,
@@ -21,13 +21,13 @@ export class ProviderService {
     }
     return this.Http.post(this.urlProviders + '/add', this.provider);
   }
-  updateProvider(myObj:any) {
+  updateProvider(myObj: any) {
     return this.Http.put(this.urlProviders + '/' + myObj['id'], myObj);
   }
-  deleteProvider(myObj:any) {
+  deleteProvider(myObj: any) {
     return this.Http.delete(this.urlProviders + '/' + myObj['id'])
   }
-  getProvider(id:any) {
+  getProvider(id: any) {
     return this.Http.get(this.urlProviders + '/' + id)
   }
 }
